@@ -322,6 +322,9 @@
       thisCart.dom.subtotalPrice = element.querySelector(select.cart.subtotalPrice);
       thisCart.dom.totalPrice = element.querySelectorAll(select.cart.totalPrice);
       thisCart.dom.totalNumber = element.querySelector(select.cart.totalNumber);
+      thisCart.dom.form = element.querySelector(select.cart.form);
+      thisCart.dom.address = element.querySelector(select.cart.address);
+      thisCart.dom.phone = element.querySelector(select.cart.phone);
     }
 
     initActions() {
@@ -337,6 +340,11 @@
 
       thisCart.dom.productList.addEventListener('remove', (e) => {
         thisCart.remove(e.detail.cartProduct);
+      });
+
+      thisCart.dom.form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        thisCart.sendOrder();
       });
     }
 
@@ -386,6 +394,32 @@
         cartDOMItems[cartProductIndex].remove();
       }
       thisCart.update();
+    }
+
+    sendOrder() {
+      const thisCart = this;
+      const url = settings.db.url + '/' + settings.db.orders;
+      const payload = {
+        address: thisCart.dom.address.value,
+        phone: thisCart.dom.phone.value,
+        totalPrice: thisCart.totalPrice,
+        subtotalPrice: parseInt(thisCart.dom.subtotalPrice.innerHTML),
+        totalNumber: parseInt(thisCart.dom.totalNumber.innerHTML),
+        deliveryFee: parseInt(thisCart.dom.deliveryFee.innerHTML),
+        products: [],
+      };
+
+      for (let product of thisCart.products) {
+        payload.products.push(product.getData());
+      }
+
+      const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      };
+
+      fetch(url, options);
     }
   }
 
@@ -449,6 +483,19 @@
         e.preventDefault();
         thisCartProduct.remove();
       });
+    }
+
+    getData() {
+      const thisCartProduct = this;
+
+      return {
+        id: thisCartProduct.id,
+        amount: thisCartProduct.amount,
+        price: thisCartProduct.price,
+        priceSingle: thisCartProduct.priceSingle,
+        name: thisCartProduct.name,
+        params: thisCartProduct.params,
+      };
     }
   }
 
