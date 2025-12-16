@@ -1,0 +1,123 @@
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  max-width: 800px;
+  margin: 25px auto;
+}
+
+.info-tile {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+.info-tile-text {
+  transition: transform 0.25s ease;
+}
+
+.order-online {
+  background-image: url("/images/home/pizza-1.jpg");
+  cursor: pointer;
+}
+
+.order-online span:hover {
+  transform: translateY(-8px);
+}
+
+.book-a-table {
+  background-image: url("/images/home/pizza-2.jpg");
+  cursor: pointer;
+}
+
+.book-a-table span:hover {
+  transform: translateY(-8px);
+}
+
+.opening-hours {
+  text-align: center;
+  grid-column: 1 / -1;
+  background-color: $color-main;
+}
+
+//Gallery
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 800px;
+  gap: 15px;
+  justify-content: center;
+  margin: 25px auto;
+}
+
+.gallery-tile {
+  position: relative;
+  height: 200px;
+  width: 210px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gallery-tile::after {
+  content: "";
+  position: absolute;
+  height: 200px;
+  width: 210px;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.gallery-tile:hover::after {
+  opacity: 1;
+}
+
+.link {
+  cursor: pointer;
+  color: $color-main;
+  text-decoration: underline;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 2;
+}
+
+.icon-left {
+  left: 25%;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.icon-right {
+  right: 25%;
+  transform: translate(50%, -50%) scale(0.8);
+}
+
+.gallery-tile:hover .icon {
+  opacity: 1;
+  transform: translateY(-4px); /* subtle lift effect */
+}
+
+.icon:hover{
+  color: $color-main;
+}
+
+.slider-tile {
+  display: inline;
+}
