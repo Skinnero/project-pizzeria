@@ -20,16 +20,15 @@ class Home {
   }
 
   initWidget() {
+    // eslint-disable-next-line no-undef
     tns({
       container: '.my-slider',
       center: true,
       items: 1,
       slideBy: 'page',
+      autoplay: true,
       nav: true,
-      navPosition: 'bottom',
-      navAsThumbnails: true,
       controls: false,
-      gutter: 10,
     });
   }
 }
