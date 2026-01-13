@@ -20,16 +20,16 @@ class Home {
   }
 
   initWidget() {
+    const elem = document.querySelector('.carousel');
     // eslint-disable-next-line no-undef
-    tns({
-      container: '.my-slider',
-      center: true,
-      items: 1,
-      slideBy: 'page',
-      autoplay: true,
-      nav: true,
-      controls: false,
+    new Flickity(elem, {
+      cellAlign: 'left',
+      wrapAround: true,
+      autoPlay: true,
+      contain: true,
+      prevNextButtons: false,
     });
+
   }
 }
 

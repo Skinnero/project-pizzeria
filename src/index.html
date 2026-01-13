@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pizzeria</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
   <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
@@ -77,58 +77,91 @@
 </div>
 
 <script id="template-home" type="text/x-handlebars-template">
-    <div class="info">
-        <div class="info-tile order-online"><span class="info-tile-text">ORDER ONLINE</span></div>
-        <div class="info-tile book-a-table"><span class="info-tile-text">BOOK A TABLE<span></span></div>
-        <div class="info-tile opening-hours">OPENING HOURS: <br> TUE-SUN, 12PM - 12AM</div>
+  <div class="info">
+    <div class="info-tile order-online">
+          <span class="info-tile-text">
+            ORDER ONLINE
+            </br>
+            <span class="hover-text">
+                Delicious food delivered to your door
+            </span>
+          </span>
     </div>
-    <div class="my-slider">
-      <div>
-        <img src="images/home/pizza-3.jpg" alt="">
-        <h4>Lorem Ipsum</h4>
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius molestie felis sed dapibus.</span>
-      </div>
-      <div>
-        <img src="images/home/pizza-3.jpg" alt="">
-        <h4>Lorem Ipsum</h4>
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius molestie felis sed dapibus.</span>
-      </div>
-      <div>
-        <img src="images/home/pizza-3.jpg" alt="">
-        <h4>Lorem Ipsum</h4>
-        <span style="overflow: clip">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius molestie felis sed dapibus.</span>
-      </div>
+    <div class="info-tile book-a-table">
+        <span class="info-tile-text">
+        BOOK A TABLE
+          </br>
+          <span class="hover-text">
+            Reservation for just for you
+          </span>
+        </span>
     </div>
-    <div class="gallery">
-        <div class="gallery-tile" style="background-image: url('images/home/pizza-4.jpg')">
-            <i class="fa-regular fa-heart icon icon-left"></i>
-            <i class="fa-solid fa-share-nodes icon icon-right"></i>
-        </div>
-        <div class="gallery-tile" style="background-image: url('images/home/pizza-5.jpg')">
-            <i class="fa-regular fa-heart icon icon-left"></i>
-            <i class="fa-solid fa-share-nodes icon icon-right"></i>
-        </div>
-        <div class="gallery-tile" style="background-image: url('images/home/pizza-6.jpg')">
-            <i class="fa-regular fa-heart icon icon-left"></i>
-            <i class="fa-solid fa-share-nodes icon icon-right"></i>
-        </div>
-        <div class="gallery-tile" style="background-image: url('images/home/pizza-7.jpg')">
-            <i class="fa-regular fa-heart icon icon-left"></i>
-            <i class="fa-solid fa-share-nodes icon icon-right"></i>
-        </div>
-        <div class="gallery-tile" style="background-image: url('images/home/pizza-8.jpg')">
-            <i class="fa-regular fa-heart icon icon-left"></i>
-            <i class="fa-solid fa-share-nodes icon icon-right"></i>
-        </div>
-        <div class="gallery-tile" style="background-image: url('images/home/pizza-9.jpg')">
-            <i class="fa-regular fa-heart icon icon-left"></i>
-            <i class="fa-solid fa-share-nodes icon icon-right"></i>
-        </div>
+    <div class="info-tile opening-hours">
+      <p>OPENING HOURS:
+        </br>
+        <span>TUE-SUN, 12PM - 12AM</span>
+      </p>
+    </div>
+  </div>
+  <div class="carousel">
+    <div>
+      <img src="images/home/pizza-3.jpg" alt="">
+      <section>
+        <h2>Amazing Service</h2>
+        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius molestie felis sed dapibus.</span>
+        </br>
+        <span class="carousel-author">- Margaret Osborne</span>
+      </section>
     </div>
     <div>
-        <a class="link">View more on Instagram
-        </a>
+      <img src="images/home/pizza-3.jpg" alt="">
+      <section>
+        <h2>Amazing Service</h2>
+        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius molestie felis sed dapibus.</span>
+        </br>
+        <span class="carousel-author">- Margaret Osborne</span>
+      </section>
     </div>
+    <div>
+      <img src="images/home/pizza-3.jpg" alt="">
+      <section>
+        <h2>Amazing Service</h2>
+        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius molestie felis sed dapibus.</span>
+        </br>
+        <span class="carousel-author">- Margaret Osborne</span>
+      </section>
+    </div>
+  </div>
+  <div class="gallery">
+    <div class="gallery-tile" style="background-image: url('images/home/pizza-4.jpg')">
+      <i class="fa-solid fa-heart icon icon-left"></i>
+      <i class="fa-solid fa-share-nodes icon icon-right"></i>
+    </div>
+    <div class="gallery-tile" style="background-image: url('images/home/pizza-5.jpg')">
+      <i class="fa-solid fa-heart icon icon-left"></i>
+      <i class="fa-solid fa-share-nodes icon icon-right"></i>
+    </div>
+    <div class="gallery-tile" style="background-image: url('images/home/pizza-6.jpg')">
+      <i class="fa-solid fa-heart icon icon-left"></i>
+      <i class="fa-solid fa-share-nodes icon icon-right"></i>
+    </div>
+    <div class="gallery-tile" style="background-image: url('images/home/pizza-7.jpg')">
+      <i class="fa-solid fa-heart icon icon-left"></i>
+      <i class="fa-solid fa-share-nodes icon icon-right"></i>
+    </div>
+    <div class="gallery-tile" style="background-image: url('images/home/pizza-8.jpg')">
+      <i class="fa-solid fa-heart icon icon-left"></i>
+      <i class="fa-solid fa-share-nodes icon icon-right"></i>
+    </div>
+    <div class="gallery-tile" style="background-image: url('images/home/pizza-9.jpg')">
+      <i class="fa-solid fa-heart icon icon-left"></i>
+      <i class="fa-solid fa-share-nodes icon icon-right"></i>
+    </div>
+  </div>
+  <div>
+    <a class="link">View more on Instagram
+    </a>
+  </div>
 </script>
 
 <script id="template-cart-product" type="text/x-handlebars-template">
@@ -305,9 +338,8 @@
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 <script src="vendor/range-slider.min.js"></script>
 <script src="js/app.js" type="module"></script>
 </body>
